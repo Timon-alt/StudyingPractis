@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114853979131",
+    "project_id": "soundproject-15422",
+    "storage_bucket": "soundproject-15422.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114853979131:android:0557d655fd4ff1bebd615e",
+        "android_client_info": {
+          "package_name": "com.example.soundproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpbjesWIYv8w316QPfuxT1ykreNGwyGb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
