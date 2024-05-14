@@ -4,9 +4,8 @@
     tools:showIn="navigation_view">
     <item android:title="SoundProject">
         <menu>
-            <item android:title="item 1" android:id="@+id/item1" android:icon="@drawable/cd_svgrepo_com"/>
-            <item android:title="item 2" android:id="@+id/item2" android:icon="@drawable/cd_svgrepo_com"/>
-            <item android:title="item 3" android:id="@+id/item3" android:icon="@drawable/cd_svgrepo_com"/>
+            <item android:title="Главная" android:id="@+id/home" android:icon="@drawable/home_icon_silhouette_svgrepo_com"/>
+            <item android:title="Создать альбом" android:id="@+id/createAlboom" android:icon="@drawable/baseline_add_circle_outline_24"/>
         </menu>
     </item>
 
