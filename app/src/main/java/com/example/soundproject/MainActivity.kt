@@ -2,6 +2,7 @@ package com.example.soundproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
@@ -23,23 +24,28 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var database: DatabaseReference
     private lateinit var albumRecycleView: RecyclerView
-    private lateinit var albumArrayList: ArrayList<Album>
+    private lateinit var albumArrayList: ArrayList<Albom>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         database = Firebase.database.reference
 
-        albumArrayList = arrayListOf<Album>()
-        getAlbumData()
+
+
 
         installSplashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        albumArrayList = arrayListOf<Albom>()
         albumRecycleView = binding.rcView
         albumRecycleView.layoutManager = LinearLayoutManager(this)
         albumRecycleView.setHasFixedSize(true)
+        albumArrayList = arrayListOf<Albom>()
+        getAlbumData()
+
 
         binding.apply {
             navMenu.setNavigationItemSelectedListener {
@@ -73,6 +79,8 @@ class MainActivity : AppCompatActivity() {
 
                         rcView.visibility = View.VISIBLE
                         catalogText.visibility = View.VISIBLE
+
+
                     }
                 }
                 true
@@ -87,6 +95,10 @@ class MainActivity : AppCompatActivity() {
 
                 createAlboom(album, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
             }
+
+            btnOpen.setOnClickListener {
+                drawer.openDrawer(GravityCompat.START)
+            }
         }
     }
 
@@ -94,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                              thirdTrack: String, fourthTrack: String, fithTrack: String) {
         val album = Albom(alboom, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
 
-        database.child("Albums").child(firstTrack).setValue(album)
+        database.child("Albums").child(alboom).setValue(album)
         Toast.makeText(this, "Альбом успешно создан!", Toast.LENGTH_SHORT).show()
     }
 
@@ -107,8 +119,9 @@ class MainActivity : AppCompatActivity() {
 
                     for (albumSnapshot in snapshot.children) {
 
-                        val album = albumSnapshot.getValue(Album::class.java)
+                        val album = albumSnapshot.getValue(Albom::class.java)
                         albumArrayList.add(album!!)
+
                     }
 
                     albumRecycleView.adapter = AlbumAdapter(albumArrayList)
@@ -118,8 +131,6 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
-
         })
     }
 }

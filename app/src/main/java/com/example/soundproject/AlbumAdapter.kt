@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AlbumAdapter(private val albumList: ArrayList<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+class AlbumAdapter(private val albumList: ArrayList<Albom>) : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
     class AlbumHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -32,6 +32,6 @@ class AlbumAdapter(private val albumList: ArrayList<Album>) : RecyclerView.Adapt
 
         val currentItem = albumList[position]
 
-        holder.albumName.text = currentItem.name
+        holder.albumName.text = currentItem.nazvanie
     }
 }
