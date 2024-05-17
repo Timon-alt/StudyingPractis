@@ -13,6 +13,7 @@ class AlbumAdapter(private val albumList: ArrayList<Albom>) : RecyclerView.Adapt
 
         val albumName: TextView = itemView.findViewById(R.id.nazvanieAlboma)
         val albumImage: ImageView = itemView.findViewById(R.id.imageAlbum)
+        val musician: TextView = itemView.findViewById(R.id.musicianText)
 
     }
 
@@ -33,5 +34,6 @@ class AlbumAdapter(private val albumList: ArrayList<Albom>) : RecyclerView.Adapt
         val currentItem = albumList[position]
 
         holder.albumName.text = currentItem.nazvanie
+        holder.musician.text = currentItem.musician
     }
 }

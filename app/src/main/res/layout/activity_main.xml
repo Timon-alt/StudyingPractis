@@ -15,109 +15,182 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/albomText"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Создать альбом(5 треков)"
-            android:visibility="gone" />
+            android:layout_height="match_parent" >
 
-        <EditText
-            android:id="@+id/albomInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="Название альбома"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <TextView
+                android:id="@+id/albomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="59dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Создать альбом(5 треков)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/firstTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="1 трек"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/albomInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="Название альбома"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/albomText" />
 
-        <EditText
-            android:id="@+id/secondTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="2 трек"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/musicianInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="Исполнитель"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/albomInput"
+                app:layout_constraintStart_toStartOf="@+id/albomInput"
+                app:layout_constraintTop_toBottomOf="@+id/albomInput" />
 
-        <EditText
-            android:id="@+id/thirdTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="3 трек"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/firstTrack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="1 трек"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/musicianInput"
+                app:layout_constraintStart_toStartOf="@+id/musicianInput"
+                app:layout_constraintTop_toBottomOf="@+id/musicianInput" />
 
-        <EditText
-            android:id="@+id/fourthTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="4 трек"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/secondTrack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="2 трек"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/firstTrack"
+                app:layout_constraintStart_toStartOf="@+id/firstTrack"
+                app:layout_constraintTop_toBottomOf="@+id/firstTrack" />
 
-        <EditText
-            android:id="@+id/fithTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="5 трек"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/thirdTrack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="3 трек"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/secondTrack"
+                app:layout_constraintStart_toStartOf="@+id/secondTrack"
+                app:layout_constraintTop_toBottomOf="@+id/secondTrack" />
 
-        <Button
-            android:id="@+id/btnCreateAlbom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Создать альбом"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/fourthTrack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="4 трек"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/thirdTrack"
+                app:layout_constraintStart_toStartOf="@+id/thirdTrack"
+                app:layout_constraintTop_toBottomOf="@+id/thirdTrack" />
 
-        <Button
-            android:id="@+id/btnOpen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            <EditText
+                android:id="@+id/fithTrack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="5 трек"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/fourthTrack"
+                app:layout_constraintStart_toStartOf="@+id/fourthTrack"
+                app:layout_constraintTop_toBottomOf="@+id/fourthTrack" />
 
-        <TextView
-            android:id="@+id/catalogText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:text="Каталог альбомов"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:visibility="visible" />
+            <Button
+                android:id="@+id/btnCreateAlbom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/custom_btn1"
+                android:text="Создать альбом"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/fithTrack"
+                app:layout_constraintStart_toStartOf="@+id/fithTrack"
+                app:layout_constraintTop_toBottomOf="@+id/fithTrack" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible" />
+            <Button
+                android:id="@+id/btnOpen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:text="Button"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/catalogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="68dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Каталог альбомов"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/catalogText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

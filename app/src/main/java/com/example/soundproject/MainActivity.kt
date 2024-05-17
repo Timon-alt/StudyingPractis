@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                         fourthTrack.visibility = View.VISIBLE
                         fithTrack.visibility = View.VISIBLE
                         btnCreateAlbom.visibility = View.VISIBLE
+                        musicianInput.visibility = View.VISIBLE
 
                         rcView.visibility = View.GONE
                         catalogText.visibility = View.GONE
@@ -87,13 +88,14 @@ class MainActivity : AppCompatActivity() {
             }
             btnCreateAlbom.setOnClickListener {
                 val album = albomInput.text.toString()
+                val musician = musicianInput.text.toString()
                 val firstTrack = firstTrack.text.toString()
                 val secondTrack = secondTrack.text.toString()
                 val thirdTrack = thirdTrack.text.toString()
                 val fourthTrack = fourthTrack.text.toString()
                 val fithTrack = fithTrack.text.toString()
 
-                createAlboom(album, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
+                createAlboom(album, musician, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
             }
 
             btnOpen.setOnClickListener {
@@ -102,9 +104,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createAlboom(alboom: String, firstTrack: String, secondTrack: String,
+    private fun createAlboom(alboom: String, msucian: String, firstTrack: String, secondTrack: String,
                              thirdTrack: String, fourthTrack: String, fithTrack: String) {
-        val album = Albom(alboom, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
+        val album = Albom(alboom, msucian, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
 
         database.child("Albums").child(alboom).setValue(album)
         Toast.makeText(this, "Альбом успешно создан!", Toast.LENGTH_SHORT).show()
