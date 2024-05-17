@@ -30,14 +30,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         database = Firebase.database.reference
 
-
-
-
         installSplashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         albumArrayList = arrayListOf<Albom>()
         albumRecycleView = binding.rcView
@@ -45,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         albumRecycleView.setHasFixedSize(true)
         albumArrayList = arrayListOf<Albom>()
         getAlbumData()
-
 
         binding.apply {
             navMenu.setNavigationItemSelectedListener {
