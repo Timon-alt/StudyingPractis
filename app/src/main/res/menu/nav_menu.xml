@@ -6,6 +6,7 @@
         <menu>
             <item android:title="Главная" android:id="@+id/home" android:icon="@drawable/home_icon_silhouette_svgrepo_com"/>
             <item android:title="Создать альбом" android:id="@+id/createAlboom" android:icon="@drawable/baseline_add_circle_outline_24"/>
+            <item android:title="Отправить отчёт" android:id="@+id/createOtchet" android:icon="@drawable/baseline_attach_money_24"/>
         </menu>
     </item>
 

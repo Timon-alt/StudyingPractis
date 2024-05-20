@@ -60,6 +60,14 @@ class MainActivity : AppCompatActivity() {
 
                         rcView.visibility = View.GONE
                         catalogText.visibility = View.GONE
+
+                        // Отчёт
+                        pribilLayout.visibility = View.GONE
+                        otchetText.visibility = View.GONE
+                        ybitokLayout.visibility = View.GONE
+                        nalogLayout.visibility = View.GONE
+                        btnOtpravit.visibility = View.GONE
+                        nometLayout.visibility = View.GONE
                     }
                     R.id.home -> {
                         drawer.closeDrawer(GravityCompat.START)
@@ -73,10 +81,37 @@ class MainActivity : AppCompatActivity() {
                         fithTrack.visibility = View.GONE
                         btnCreateAlbom.visibility = View.GONE
 
+                        // Отчёт
+                        pribilLayout.visibility = View.GONE
+                        otchetText.visibility = View.GONE
+                        ybitokLayout.visibility = View.GONE
+                        nalogLayout.visibility = View.GONE
+                        btnOtpravit.visibility = View.GONE
+                        nometLayout.visibility = View.GONE
+
                         rcView.visibility = View.VISIBLE
                         catalogText.visibility = View.VISIBLE
+                    }
+                    R.id.createOtchet -> {
+                        drawer.closeDrawer(GravityCompat.START)
+                        // Главное меню
+                        albomText.visibility = View.GONE
+                        albomInput.visibility = View.GONE
+                        firstTrack.visibility = View.GONE
+                        secondTrack.visibility = View.GONE
+                        thirdTrack.visibility = View.GONE
+                        fourthTrack.visibility = View.GONE
+                        fithTrack.visibility = View.GONE
+                        btnCreateAlbom.visibility = View.GONE
+                        rcView.visibility = View.GONE
+                        catalogText.visibility = View.GONE
 
-
+                        pribilLayout.visibility = View.VISIBLE
+                        otchetText.visibility = View.VISIBLE
+                        ybitokLayout.visibility = View.VISIBLE
+                        nalogLayout.visibility = View.VISIBLE
+                        btnOtpravit.visibility = View.VISIBLE
+                        nometLayout.visibility = View.VISIBLE
                     }
                 }
                 true
@@ -93,8 +128,13 @@ class MainActivity : AppCompatActivity() {
                 createAlboom(album, musician, firstTrack, secondTrack, thirdTrack, fourthTrack, fithTrack)
             }
 
-            btnOpen.setOnClickListener {
-                drawer.openDrawer(GravityCompat.START)
+            btnOtpravit.setOnClickListener {
+                val pribil = pribilInput.text.toString()
+                val ybitok = ybitokInput.text.toString()
+                val nalog = nalogInput.text.toString()
+                val nomer = nomerInput.text.toString()
+
+                sendOtchet(pribil, ybitok, nalog, nomer)
             }
         }
     }
@@ -105,6 +145,13 @@ class MainActivity : AppCompatActivity() {
 
         database.child("Albums").child(alboom).setValue(album)
         Toast.makeText(this, "Альбом успешно создан!", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun sendOtchet(pribil: String, ybitok: String, nalog: String, nomer: String) {
+        val otchet = Otchet(pribil, ybitok, nalog, nomer)
+
+        database.child("Otchets").child(nomer).setValue(otchet)
+        Toast.makeText(this, "Отчёт успешно отправлен!", Toast.LENGTH_SHORT).show()
     }
 
     private fun getAlbumData() {
